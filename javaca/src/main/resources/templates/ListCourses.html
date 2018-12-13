@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Select Course</title>
+<link rel="stylesheet" th:href="@{/css/custom.css}" />
+<link rel="stylesheet" th:href="@{/css/main.css}" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+ <body>
+	<h1 align="center">Select Course</h1>
+		
+<div class="topnav">
+  		<a href="#home">Home</a>
+  		<a href="/Viewlectuers">View all Lecturers</a>
+ 	 	<a href="/Addlecture">Add New Lecturer </a>
+ 		<a href="/ViewStudents">View all Students</a>
+ 	 	<a href="/adduser">Add New Student </a>
+ 	 	<a href="/manage-viewCourse">View all Courses</a>
+ 	 	<a href="/manage-addCourse">Add New Course</a>
+ 	 	<a class="active" href="/ListCourses">Assign Lecturer to a Course</a>
+ 	 	<a href="/ViewLecturerCourse">View Assigned All Courses</a>
+	</div>
+	<br />
+	<br />
+	
+	<p>Select the course to assign a lecturer to.</p>
+	<form:form>
+		<table id="t01" border="2" width="70%" cellpadding="2">
+			
+			<tr>
+				<th>Course ID</th>
+				<th>Course Title</th>			
+			</tr>
+			<tr th:each="course: ${list}">
+				<td><a th:href="@{'/EnrollLecturerCourse/' + ${course.courseID}}" th:text="${course.courseID}"></a></td>
+				<td th:text="${course.Title}"></td>			
+			</tr>
+ 		</table>
+		<br />
+	</form:form>
+</body>
+ </html>

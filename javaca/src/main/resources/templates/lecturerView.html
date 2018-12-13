@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8">
+      <title>Lecturer Page</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+      <link rel="stylesheet" th:href="@{/css/style.css}" />
+   </head>
+   <body>
+    
+      <th:block th:include="/_header"></th:block>
+      <th:block th:include="/_menu"></th:block>
+       
+      <div class="page-title">Lecturer</div>
+      <div th:if="${errorMessage!= null}" class="error-message" th:utext="${errorMessage}">
+      </div>
+       
+     <h1> this is Lecturer View</h1>
+     
+     <div class="topnav">
+		<a class="active" href="#home">Home</a>
+		<a href="/#">View Courses you Teach</a> 
+	</div>
+	<br />
+	<br />
+       
+      <th:block th:include="/_footer"></th:block>
+       
+   </body>
+</html>
